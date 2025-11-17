@@ -18,9 +18,12 @@ Explanation:
 		System.out.println("Enter the id, name, price");
 		int id = sc.nextInt();
 		String name = sc.next();
-		int price = sc.nextInt();
+		double price = sc.nextDouble();
+		Product p1 = new Product(id, name, price);
+		Product p2 = new Product(p1);
 		
-		
+		System.out.println(p1.id+"\t"+p1.name);
+		System.out.println(p2.id+"\t"+p2.name);
 	}
  }
  class Product{
@@ -28,9 +31,17 @@ Explanation:
 	 protected String name;
 	 protected Double price;
 	 
-	 Product(int id, String name, Double price){
+	 Product(int id, String name, Double price){//normal constructor 
 		this.id = id;
 		this.name = name;
 		this.price = price;
+		
 	 }
+	 
+	 Product(Product p){//copy constructor (used to copy one object to another)
+		 this.name = p.name;
+		 this.id = p.id;
+		 this.price =p.price;
+	 }
+	 
  }
