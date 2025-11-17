@@ -21,7 +21,7 @@ public class constructor{
 	}
 }
 class square{
-	void calSquare(int n){
+	square(int n){
 		System.out.println("Square is : "+ n*n);
 	}
 }
